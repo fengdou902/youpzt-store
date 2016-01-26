@@ -1,0 +1,21 @@
+/*
+admin.css
+youpzt
+*/
+.cs-dialog {display: none;padding: 0;}
+/*重置选项框*/
+/*tab排版*/
+.cs-framework .cs-nav{width:auto;float:none;overflow: hidden;border-bottom:1px solid #f0f0f0;margin-top: 20px;}
+.cs-framework .cs-nav ul li{float:left;margin-left: 5px;margin-bottom: -2px;}
+.cs-framework .cs-content{margin-left: 0;}
+.cs-framework .cs-nav-background{position: relative;width: auto;}
+.cs-framework .cs-nav ul li .cs-section-active:after{content:none;}
+.cs-framework .cs-nav ul li a{border:1px solid #ccc;border-bottom:none;font-size: 15px;padding: 10px 15px;}
+.cs-framework .cs-nav ul li .cs-section-active,.cs-framework .cs-nav .cs-seperator{border-bottom: none;border-bottom: 1px solid #fff;}
+.change_class{padding-left:20px;}
+/*颜色*/
+.cs-framework .cs-nav-background,.cs-framework .cs-nav ul li .cs-section-active,.cs-framework .cs-nav ul li a,.cs-framework .cs-footer,.cs-framework .cs-nav ul ul li a{background-color: #f0f0f0;}
+.cs-framework .cs-nav ul ul:before,.cs-framework .cs-nav ul ul li .cs-section-active{background-color: #e3e3e3;}
+.cs-framework .cs-nav ul li a,.cs-framework .cs-nav .cs-seperator,.cs-framework .cs-nav ul ul li a,.cs-framework .cs-nav ul ul{border-color: #e6e6e6;}
+.cs-framework .cs-nav ul li a,.cs-framework .cs-nav ul li .cs-section-active,.cs-framework .cs-nav .cs-seperator{color: #444;}
+.cs-framework .cs-nav ul li a:hover,.cs-framework .cs-nav ul li .cs-section-active{color: #000;background-color: #fff;}
