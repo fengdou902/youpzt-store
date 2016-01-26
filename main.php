@@ -78,7 +78,7 @@ add_submenu_page('youpzt_store','报表统计', '报表统计', 'administrator',
 }
 
 function youpzt_store_page(){
-
+    echo '待加';
 }
 
 ?>
