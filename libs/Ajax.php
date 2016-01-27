@@ -39,7 +39,6 @@ function youpzt_store_ajax_events(){
 		    			do_action('youpztStore_ajax_'.$ajax_event_var);//触发
 		    			exit();
 		    	}	
-
     }
 
   }

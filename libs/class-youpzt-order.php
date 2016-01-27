@@ -207,8 +207,7 @@ class Youpzt_Order{
    			return $order_status;
    		}else{
    			return false;
-   		}
-   		
+   		}		
    }
    //获取订单变量
    public function get_order_var($get_order_var='order_status',$by='order_id',$by_var=null){
