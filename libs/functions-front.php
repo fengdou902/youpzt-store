@@ -52,6 +52,7 @@ function youpzt_of_register_assets() {
 		wp_enqueue_script( 'youpzt-store-messages_zh', UPSTORE_PLUGIN_ASSETS_URI. 'js/messages_zh.min.js', array('jquery' ), '1.0', true );
 		wp_enqueue_script( 'smoothproducts.min', UPSTORE_PLUGIN_ASSETS_URI. 'js/smoothproducts.min.js', array('jquery' ), '1.0', true );
 		wp_enqueue_script( 'youpzt-store-main', UPSTORE_PLUGIN_ASSETS_URI. 'js/main.js', array('jquery' ), '1.0', true );
+		wp_enqueue_script( 'layer', UPSTORE_PLUGIN_ASSETS_URI. 'js/layer/layer.js', array('jquery' ), '1.0', true );
 	}
 
 }

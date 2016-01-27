@@ -2,6 +2,11 @@
 //window.onerror=function(){return true;} 
 // --> 
 $(document).ready(function(){
+	// 定义函数关闭弹窗
+	var close_ud_modal = function() {
+		layer.closeAll();
+	}
+
 	/*
 	*添加购物车
 	*author:zjf
@@ -11,24 +16,36 @@ $(document).ready(function(){
 				//alert(product_id);
 				jQuery.ajax({
 					url:YOUPZT_HOME_URL,
-					data: "ajax_var=add_to_cart&product_id="+product_id,      //传值    
+					data: "ajax_var=add_to_cart&product_id="+product_id,     //传值    
 					dataType: "html",                                
 					type: "get",                  
 					beforeSend:function(){
 					},
 					success:function(message){	
-						alert(message);
-						if (message=='1') {
-		             	//内容为空
-
-						};
-
+						layer.open({
+		    				type: 1,
+		    				shift: 2,
+		    				closeBtn: 1,
+		    				shade:false,
+		    				
+		    				
+		    				title: false, //不显示标题
+		    				content: $('.primary-add-carts-success'), //捕获的元素
+		    				cancel: function(index){
+		    				    layer.close(index);
+    							}
+						});
+						
 					},
 					error: function() {
 									
 								 },
 					}); 
 	});
+	//购物车继续购物
+	$('.primary-add-carts-success-continue').on('click',function(){
+		close_ud_modal();
+	})
 	//顶部搜索
 	$('.primary-search').on('click',function(e){
 		e.stopPropagation();
@@ -99,12 +116,12 @@ $(document).ready(function(){
 		});
 	});
 	//购物车tips
-	$('.primary-category-bags').on("mouseover",function(){
-		layer.tips('点击加入购物车', this,{
-			tips:[1,'#44A05D'],
-			time:1000,
-		});
-	});
+	// $('.primary-category-bags').on("mouseover",function(){
+	// 	layer.tips('点击加入购物车', this,{
+	// 		tips:[1,'#44A05D'],
+	// 		time:1000,
+	// 	});
+	// });
 	//我的地址tips
 	$('.primary-address-edit-tips').on("mouseover",function(){
 		layer.tips('修改信息', this,{

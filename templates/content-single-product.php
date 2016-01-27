@@ -46,11 +46,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<div class="primary-products-information-price mt-30">
 			<span>价格：</span>
-			<span class="ml-30 f24">	¥4999</span>
+			<span class="ml-30 f24">¥4999</span>
+			<span class="f12 ml-20"><s>市场价：</s></span>
+			<span class="f12"><s>¥5999</s></span>
 		</div>
 		<div class="primary-products-information-btn mt-50">
-			<span class="border-green radius5 mr-20">立即购买</span>
-			<span class="border-blue radius5 add_to_cart" data-productid="<?php the_ID();?>">加入购物车</span>
+			<span class="border-green radius5 mr-20 cp">立即购买</span>
+			<span class="border-blue radius5 add_to_cart cp" data-productid="<?php the_ID();?>">加入购物车</span>
+		</div>
+		<!-- 添加购物车提示 -->
+		<div class="primary-add-carts-success hide p10">
+			<h3 class="border-1 pb-20">您已成功添加到购物车</h3>
+			 <p><span class="primary-add-carts-success-continue cp p10 mt-25 disinblock f14 radius5 tc">继续购物</span><span class="primary-add-carts-success-see p10 mt-25 disinblock f14 radius5 tc fr"><a href="###">查看购物车</a></span></p>
 		</div>
 	</div>
 	<div class="cb"></div>
