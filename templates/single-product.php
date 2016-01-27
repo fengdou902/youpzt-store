@@ -21,7 +21,7 @@ get_header(); ?>
 	?>
 <div class="content-area twentysixteen">
  <!--商品详情-->
-    <div class="primary-goods-information container mt-40">
+    <div class="primary-goods-information ud-container pt-20">
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php youpztStore_get_template_part( 'content', 'single-product' ); ?>
