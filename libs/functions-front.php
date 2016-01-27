@@ -44,11 +44,13 @@ $get_tab=isset($_GET['tab'])?$_GET['tab']:'ucenter';
 		wp_enqueue_style( 'youpzt-store-normalize', UPSTORE_PLUGIN_ASSETS_URI. 'css/normalize.css','',1.1);
 		wp_enqueue_style( 'youpzt-store-h-ui', UPSTORE_PLUGIN_ASSETS_URI. 'css/h-ui.css','',1.1);
 		wp_enqueue_style( 'youpzt-store-base', UPSTORE_PLUGIN_ASSETS_URI. 'css/base.css','',1.1);
+		wp_enqueue_style( 'smoothproducts', UPSTORE_PLUGIN_ASSETS_URI. 'css/smoothproducts.css','',1.1);
 		wp_enqueue_style( 'youpzt-store-style', UPSTORE_PLUGIN_ASSETS_URI. 'css/style.css','',1.1);
 
 		wp_enqueue_script( 'youpzt-store-jquery.validate.min', UPSTORE_PLUGIN_ASSETS_URI. 'js/jquery.validate.min.js', array('jquery' ), '1.0', true );
 		wp_enqueue_script( 'youpzt-store-validate-methods', UPSTORE_PLUGIN_ASSETS_URI. 'js/validate-methods.js', array('jquery' ), '1.0', true );
 		wp_enqueue_script( 'youpzt-store-messages_zh', UPSTORE_PLUGIN_ASSETS_URI. 'js/messages_zh.min.js', array('jquery' ), '1.0', true );
+		wp_enqueue_script( 'smoothproducts.min', UPSTORE_PLUGIN_ASSETS_URI. 'js/smoothproducts.min.js', array('jquery' ), '1.0', true );
 		wp_enqueue_script( 'youpzt-store-main', UPSTORE_PLUGIN_ASSETS_URI. 'js/main.js', array('jquery' ), '1.0', true );
 	}
 

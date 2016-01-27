@@ -126,7 +126,7 @@ $(document).ready(function(){
 	});
 	
 	//商品详情图片放大
-	$(window).load(function() {
+	$(document).ready(function() {
 		$('.sp-wrap').smoothproducts();
 	});
 	//商品详情页数量加
