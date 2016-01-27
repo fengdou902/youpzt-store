@@ -1,5 +1,3 @@
-<?php get_header();?>
-
     <div class="primary-goods-bags ud-container mt-20">
     		<div class="col-sm-2 primary-user-center">
     			<ul>
@@ -79,4 +77,3 @@
     			</div>
     		</div>
     </div>
-<?php get_footer();?>

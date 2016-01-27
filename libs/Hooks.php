@@ -4,11 +4,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 //注册商城所需要的页面
 function youpzt_store_create_pages(){
-    $config_store_pages=array(
+    /*$config_store_pages=array(
             'cart'=>'购物车',
             'checkout'=>'结算',
             'my-account'=>'我的账户',
             'my-address'=>'我的地址',
+            'shop'=>'商店'
+        );*/
+    $config_store_pages=array(
+            'youpzt-store'=>'我的账户',
             'shop'=>'商店'
         );
     foreach ($config_store_pages as $key => $store_page_val) {

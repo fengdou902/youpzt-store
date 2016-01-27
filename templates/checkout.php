@@ -1,4 +1,4 @@
-<?php get_header();?>
+
    <div class="primary-goods-bags ud-container mt-20">
     		
     		<div class="col-sm-12 mt-10 p10">
@@ -123,4 +123,3 @@
     			<div class="tr mt-20 border-green p10-40 radius5 disinblock fr"><a class="show" href="#">结算</a></div>
     		</div>
     </div>
-<?php get_footer();?>

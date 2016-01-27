@@ -1,4 +1,3 @@
-<?php get_header();?>
     <!--购物车-->
     <div class="primary-goods-bags ud-container mt-40">
     		<div class="catbox">
@@ -56,4 +55,3 @@
 
 	</div>
 </div>
-<?php get_footer();?>

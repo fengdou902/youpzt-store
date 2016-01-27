@@ -39,8 +39,8 @@ endif;
  */
  if ( ! function_exists( 'youpzt_of_register_assets' ) ) :
 function youpzt_of_register_assets() {	
-$get_tab=isset($_GET['tab'])?$_GET['tab']:'ucenter';
-	if (is_page(array('shop','cart','my-account'))||(is_single()&&get_post_type()=='product')) {
+	$get_tab=isset($_GET['tab'])?$_GET['tab']:'ucenter';
+	if (is_page(array('shop','youpzt-store'))||(is_single()&&get_post_type()=='product')) {
 		wp_enqueue_style( 'youpzt-store-normalize', UPSTORE_PLUGIN_ASSETS_URI. 'css/normalize.css','',1.1);
 		wp_enqueue_style( 'youpzt-store-h-ui', UPSTORE_PLUGIN_ASSETS_URI. 'css/h-ui.css','',1.1);
 		wp_enqueue_style( 'youpzt-store-base', UPSTORE_PLUGIN_ASSETS_URI. 'css/base.css','',1.1);

@@ -19,6 +19,8 @@ function youpzt_store_load_template($template_path){
         return $template_path = UPSTORE_PLUGIN_DIR.'/templates/checkout.php';
     }elseif (is_page('cart')) {
         return $template_path = UPSTORE_PLUGIN_DIR.'/templates/cart.php';
+    }elseif (is_page('youpzt-store')) {
+        return $template_path = UPSTORE_PLUGIN_DIR.'/templates/youpzt-store.php';
     }elseif (is_single()&&get_post_type()=='product') {
         return $template_path = UPSTORE_PLUGIN_DIR.'/templates/single-product.php';
     }else{
@@ -26,7 +28,15 @@ function youpzt_store_load_template($template_path){
     }
 }
 add_filter( 'template_include', 'youpzt_store_load_template', 1 );
-
+/* youpzt-store tab */
+function youpztStore_get_tab_url( $type='', $user_id=0 ){
+    $user_id = intval($user_id);
+    if( $user_id==0 ){
+        $user_id = get_current_user_id();
+    }
+    $url = add_query_arg( 'tab', $type, get_author_posts_url($user_id) );
+    return $url;
+}
 /**
  * 获取模板的一部分 (如：商品循环)
  *
