@@ -15,6 +15,8 @@ function youpzt_store_load_template($template_path){
         return $template_path = UPSTORE_PLUGIN_DIR.'/templates/my-address.php';
     }elseif (is_page('shop')) {
         return $template_path = UPSTORE_PLUGIN_DIR.'/templates/shop.php';
+    }elseif (is_page('checkout')) {
+        return $template_path = UPSTORE_PLUGIN_DIR.'/templates/checkout.php';
     }elseif (is_page('cart')) {
         return $template_path = UPSTORE_PLUGIN_DIR.'/templates/cart.php';
     }elseif (is_single()&&get_post_type()=='product') {
