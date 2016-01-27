@@ -11,7 +11,7 @@
                     <div class="bg-color-hui1 p10">
                     <p class="">大疆无人机</p>
                     <p class="f12">专业的飞行器，给你专业的视觉享受</p>
-                    <p><span>¥4999</span><span id="primary-category-bags" class="fr cp primary-category-bags"><i class="iconfont color-blue">&#xe600;</i></span></p>
+                    <p><span>¥<strong class="f24 ml-5">4999</strong></span><span class="fr cp primary-category-bags f14 radius5 color-white">加入购物车<i class="iconfont color-blue ml-5">&#xe600;</i></span></p>
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                     <div class="bg-color-hui1 p10">
                     <p class="">大疆无人机</p>
                     <p class="f12">专业的飞行器，给你专业的视觉享受</p>
-                    <p><span>¥4999</span><span class="fr cp primary-category-bags"><i class="iconfont color-blue">&#xe600;</i></span></p>
+                    <p><span>¥<strong class="f24 ml-5">4999</strong></span><span class="fr cp primary-category-bags f14 radius5 color-white">加入购物车<i class="iconfont color-blue ml-5">&#xe600;</i></span></p>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                     <div class="bg-color-hui1 p10">
                     <p class="">大疆无人机</p>
                     <p class="f12">专业的飞行器，给你专业的视觉享受</p>
-                    <p><span>¥4999</span><span class="fr cp primary-category-bags"><i class="iconfont color-blue">&#xe600;</i></span></p>
+                    <p><span>¥<strong class="f24 ml-5">4999</strong></span><span class="fr cp primary-category-bags f14 radius5 color-white">加入购物车<i class="iconfont color-blue ml-5">&#xe600;</i></span></p>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     <div class="bg-color-hui1 p10">
                     <p class="">大疆无人机</p>
                     <p class="f12">专业的飞行器，给你专业的视觉享受</p>
-                    <p><span>¥4999</span><span class="fr cp primary-category-bags"><i class="iconfont color-blue">&#xe600;</i></span></p>
+                    <p><span>¥<strong class="f24 ml-5">4999</strong></span><span class="fr cp primary-category-bags f14 radius5 color-white">加入购物车<i class="iconfont color-blue ml-5">&#xe600;</i></span></p>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                     <div class="bg-color-hui1 p10">
                     <p class="">大疆无人机</p>
                     <p class="f12">专业的飞行器，给你专业的视觉享受</p>
-                    <p><span>¥4999</span><span class="fr cp primary-category-bags"><i class="iconfont color-blue">&#xe600;</i></span></p>
+                    <p><span>¥<strong class="f24 ml-5">4999</strong></span><span class="fr cp primary-category-bags f14 radius5 color-white">加入购物车<i class="iconfont color-blue ml-5">&#xe600;</i></span></p>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     <div class="bg-color-hui1 p10">
                     <p class="">大疆无人机</p>
                     <p class="f12">专业的飞行器，给你专业的视觉享受</p>
-                    <p><span>¥4999</span><span class="fr cp primary-category-bags"><i class="iconfont color-blue">&#xe600;</i></span></p>
+                    <p><span>¥<strong class="f24 ml-5">4999</strong></span><span class="fr cp primary-category-bags f14 radius5 color-white">加入购物车<i class="iconfont color-blue ml-5">&#xe600;</i></span></p>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                     <div class="bg-color-hui1 p10">
                     <p class="">大疆无人机</p>
                     <p class="f12">专业的飞行器，给你专业的视觉享受</p>
-                    <p><span>¥4999</span><span class="fr cp primary-category-bags"><i class="iconfont color-blue">&#xe600;</i></span></p>
+                    <p><span>¥<strong class="f24 ml-5">4999</strong></span><span class="fr cp primary-category-bags f14 radius5 color-white">加入购物车<i class="iconfont color-blue ml-5">&#xe600;</i></span></p>
                     </div>
                 </div>
             </div>
@@ -81,9 +81,10 @@
                     <div class="bg-color-hui1 p10">
                     <p class="">大疆无人机</p>
                     <p class="f12">专业的飞行器，给你专业的视觉享受</p>
-                    <p><span>¥4999</span><span class="fr cp primary-category-bags"><i class="iconfont color-blue">&#xe600;</i></span></p>
+                    <p><span>¥<strong class="f24 ml-5">4999</strong></span><span class="fr cp primary-category-bags f14 radius5 color-white">加入购物车<i class="iconfont color-blue ml-5">&#xe600;</i></span></p>
                     </div>
                 </div>
             </div>
+            <div class="cb"></div>
     </div>
     <?php get_footer();?>
