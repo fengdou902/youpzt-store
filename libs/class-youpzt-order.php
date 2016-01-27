@@ -31,40 +31,57 @@ class Youpzt_Order{
      * 添加订单
      *
      * @access  public
-
      * @return  bool
      */
     public function insert_to_cart($order_item=array()){
-	    	if(!is_array($order_item)||count($order_item) == 0) {
+
+	    	  if(!is_array($order_item)||count($order_item) == 0) {
 	   					return false;
 	   				}
 	   			if (isset($order_item['product_id'])) {
 	   				$product_id=intval($order_item['product_id']);
 	   				global $wpdb;
-	   				$return_order_id = $wpdb->get_var("SELECT order_id FROM {$wpdb->youpzt_order} WHERE product_id=$product_id and order_status=0");//检测购物车中是否存在这个产品
+            $order_buyer=$this->user_id;
+	   				$return_order_id = $wpdb->get_var("SELECT order_id FROM {$wpdb->youpzt_order} WHERE product_id=$product_id and order_status=0 and order_buyer=$order_buyer");//检测购物车中是否存在这个产品
 	   				if ($return_order_id) {//存在这个产品
-		   					$old_product_count=get_order_meta($return_order_id,'product_count',true);
-		   					$old_product_count=$old_product_count?$old_product_count:0;
-		   					$new_product_count=intval($old_product_count)+1;
-		   					update_order_meta($return_order_id,'product_count',$new_product_count);
+		   					$this->change_qrt_order($return_order_id,'add');//改变产品数量
 	   				}else{
-	   					$this->insert_order($order_item);//添加新的订单
+	   					$return_order_id=$this->insert_order($order_item);//添加新的订单
 	   				}
-	   			}
+            return $return_order_id;
+	   			}else{
+            return false;
+          }
 	   			
     }
-
+    /**
+     * 改变订单中产品数量
+     *@param $order_id订单id
+     * @access  public
+     * @return  bool
+     */
+    public function change_qrt_order($order_id,$type='add'){
+        $old_product_count=get_order_meta($order_id,'product_count',true);
+        $old_product_count=$old_product_count?$old_product_count:0;
+        if ($type=='add') {
+            $new_product_count=intval($old_product_count)+1;
+        }elseif($type=='reduce'){
+            $new_product_count=intval($old_product_count)-1;
+        }else{
+            $new_product_count=intval($old_product_count);
+        }
+       return $reo=update_order_meta($order_id,'product_count',$new_product_count);
+    }
     /**
      * 添加订单
      *
      * @access  public
      * @param   array   一维或多维数组,必须包含键值名: 
-                        product_id -> 产品ID标识, 
-                        product_count -> 数量(quantity), 
-                        product_price -> 单价(price), 
-                        name -> 产品名称
-                        order_status->订单状态
-
+     *                   product_id -> 产品ID标识, 
+      *                  product_count -> 数量(quantity), 
+      *                  product_price -> 单价(price), 
+      *                  name -> 产品名称
+      *                  order_status->订单状态
      * @return  bool
      */
    public function insert_order($order_item=array()){
@@ -114,6 +131,7 @@ class Youpzt_Order{
                 }else{
                     $reg=0;
                 }
+              return $reg;
    } 
 
   	//更新订单
@@ -131,15 +149,16 @@ class Youpzt_Order{
 
             $result=$wpdb->update($wpdb->youpzt_order,$update_data,$where_clause);
             if ($result) {
-                echo '1';
+                return true;
             }else{
-                echo '0';
+                return false;
             }
         } 
    } 
 
    //删除订单
    public function delete_order($order_id){
+        $order_id=intval($order_id);
 		   	if ($order_id&&is_int($order_id)) {
 		   		global $wpdb;
 		   		$return_del=$wpdb->query($wpdb->prepare("DELETE FROM $wpdb->youpzt_order WHERE order_id=%d;",$order_id));
