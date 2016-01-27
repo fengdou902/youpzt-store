@@ -15,7 +15,7 @@ body{color: #666;}
 .ud-container ul{padding:0;margin:0;} 
 .ud-container ul li{list-style: none;}
 .ud-container a{text-decoration: none;color: #666;} 
-.ud-container a:active,a:visited,a:hover{color:#666;}
+.ud-container a:active,a:visited,a:hover{color: inherit!important;text-decoration: none!important;}
 .ud-container h4,h3{font-weight:300;}
 .ud-container h3{font-size: 24px;}
 .cp{cursor: pointer;}
@@ -83,6 +83,11 @@ body{color: #666;}
 .primary-category-goods-count{width: 50px;}
 .primary-products-information-count input{border:none;text-align: center;background: none;}
 .primary-products-information-btn span{padding: 10px 25px;}
+.primary-add-carts-success{padding:20px;}
+.primary-add-carts-success p{margin:0!important;}
+.primary-add-carts-success-continue{background-color: #CACACA;width: 48%;}
+.primary-add-carts-success-see{background-color: #1ABC9C;width: 48%;color: #fff;}
+.primary-add-carts-success-see a{color: #fff;display: block;}
 /*分类产品展示详情*/
 .primary-goods-information-describe h3{font-weight: 300;}
 .tabCon p{line-height: 1.5;}
