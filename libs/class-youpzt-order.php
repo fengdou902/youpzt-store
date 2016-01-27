@@ -106,23 +106,23 @@ class Youpzt_Order{
                 if($insert_order_id){
                 	if (isset($order_item['product_id'])) {
 		                		//添加订单的扩展字段
-		                		$order_meta_config=array(
+		                		$order_meta_more=array(
 		                					'product_id'		=>$order_item['product_id'],
 		                					'single_price'	=>$order_item['product_price'],//单价
 		                			);
-		                		if (!empty($order_meta_config)) {
-		                				$order_meta_arg_string=serialize($order_meta_config);
+		                		if (!empty($order_meta_more)) {
+		                				$order_meta_arg_string=serialize($order_meta_more);
 		                				update_order_meta($insert_order_id,'order_more_att',$order_meta_arg_string);//添加更新不变属性
 		                		}
 
 		                		$product_count=isset($order_item['product_count'])?$order_item['product_count']:1;
 		                		$total_price=intval($product_count)*intval($order_item['product_price']);
-		                		$order_meta_more=array(
+		                		$order_meta_config=array(
 		                					'product_count'=>$product_count,//产品数量
 		                					'total_price'=>$total_price,//订单总价
 		                			);
-		                		if (!empty($order_meta_more)){
-		                				foreach ($order_meta_more as $meta_key => $order_meta) {
+		                		if (!empty($order_meta_config)){
+		                				foreach ($order_meta_config as $meta_key => $order_meta) {
 		                						update_order_meta($insert_order_id,$meta_key,$order_meta);
 		                				}
 		                		}
@@ -170,6 +170,36 @@ class Youpzt_Order{
 		   		return false;
 		   	}
    }
+    /**
+     * 获取订单数据
+     *@param $where 查询判断条件
+     *      $page页
+     *      $order排序
+     *      $field过滤字段
+     *      $r每页的条数
+     * @access  public
+     * @return  bool
+     */
+    public function get_orderList($where="order_status<>-1",$offset=0,$r=12,$field='*',$order='order by order_date desc '){
+        $order_query="SELECT {$field} FROM $wpdb->youpzt_order where $where $order limit $offset,$r";
+        return $order_results = $wpdb->get_results($order_query);//客户查询的结果集
+    }
+    /**
+     * 根据订单id获取订单数据（产品类型）
+     *@param $order_id订单id
+     * @access  public
+     * @return  bool
+     */
+    public function get_order_by_id($order_id){
+        if ($order_id) {
+          $order_arg=$wpdb->get_row($wpdb->prepare("SELECT * FROM $wpdb->youpzt_order where order_id=%d;",$order_id),ARRAY_A,0);
+          $order_meta_config=array('order_more_att','product_count','total_price');//要获取的订单meta属性值
+          foreach ($order_meta_config as $key => $order_meta) {
+              $order_arg[$order_meta]=get_order_meta($order_id,$order_meta,true);
+          }
+          return $order_arg;
+        }
+    }
     //获取订单状态
    public function get_order_status($order_id){
    		if ($order_id&&is_int($order_id)) {
@@ -177,8 +207,7 @@ class Youpzt_Order{
    			return $order_status;
    		}else{
    			return false;
-   		}
-   		
+   		}		
    }
    //获取订单变量
    public function get_order_var($get_order_var='order_status',$by='order_id',$by_var=null){

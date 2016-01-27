@@ -13,6 +13,7 @@ function add_ajax_events() {
 										'add_to_cart'          	 => true,
 										'change_qrt_cart'         => true,
 										'remove_to_cart'         => true,
+										'get_orderList'         => true,
 										'change_order_status'    => false,
 										'delete_order'	  			=>false,	
 										'get_variation'           => true,
@@ -38,7 +39,6 @@ function youpzt_store_ajax_events(){
 		    			do_action('youpztStore_ajax_'.$ajax_event_var);//触发
 		    			exit();
 		    	}	
-
     }
 
   }
@@ -105,6 +105,35 @@ function remove_to_cart($row_id){
 	if ($row_id) {
 		$row_id=intval($row_id);
 		return delete_order($row_id);//其实是根据id删除订单表中的数据
+	}
+}
+/**
+*获取订单列表
+* @param $status(int)订单状态
+*					$offset(int) 列表的当前页码偏移
+*					$number(int) 每页的数量
+*@return  array订单列表数组
+*/
+function get_orderList($status,$offset,$number){
+	if ($status&&$offset) {
+			global $current_user;
+			$where="order_status=".$status;
+			$order_obj=new Youpzt_Order($current_user->ID);
+			return $order_obj->get_orderList($where,$offset,$number);
+	}
+}
+/**
+*获取订单列表
+* @param $status(int)订单状态
+*					$offset(int) 列表的当前页码偏移
+*					$number(int) 每页的数量
+*@return  array当前订单的所有数据
+*/
+function get_order_by_id($order_id){
+	if ($order_id) {
+			global $current_user;
+			$order_obj=new Youpzt_Order($current_user->ID);
+			return $order_obj->get_order_by_id($order_id);
 	}
 }
 /**
