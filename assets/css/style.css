@@ -67,6 +67,7 @@ body{color: #666;}
 .primary-title h2{font-weight:200;}
 /*分类*/
 .primary-category-sift {}
+.primary-category-bags{padding:5px 10px;background-color:#FD7965;}
 /*分类产品展示*/
 .primary-category-goods img{width:100%;}
 .sp-wrap{}/*商品放大宽度调整*/
