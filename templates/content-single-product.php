@@ -57,7 +57,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!--商品描述-->
 		<div class="primary-goods-information-describe mt-70 border-1 pb-20">
 			<div id="tab_demo" class="HuiTab bt-1">
-				<div class="tabBar cl">
+				<div class="tabBar cl pb-15 border-1 mb-15">
 					<span>商品详情</span>
 					<span>商品评论</span>
 					<div class="cb"></div>

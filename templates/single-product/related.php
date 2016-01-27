@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
  ?>
 		<!--相关商品-->
-		<div class="primary-products-information-about">
+		<div class="primary-products-information-about p10 mb-20">
 			<h3 class="mt-40">相关产品</h3>
 			<ul>
 				<li class="col-sm-2">
@@ -39,5 +39,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/small_4kc.png" />
 					<p>大疆无人机</p>
 				</li>
+				<div class="cb"></div>
 			</ul>
 		</div>
