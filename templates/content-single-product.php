@@ -11,16 +11,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 ?>
+<?php while ( have_posts() ) : the_post(); ?>
   <div>
   		<div class="primary-page-img fl">
 		<div class="sp-loading"><img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/sp-loading.gif" alt=""><br>LOADING IMAGES</div>
 		<div class="sp-wrap">
-			<a href="images/small_4kc.png"><img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/medium_p1.jpg" alt=""></a>
-			<a href="images/small_4kc.png"><img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/medium_p1.jpg" alt=""></a>
-			<a href="images/small_4kc.png"><img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/medium_p1.jpg" alt=""></a>
-			<a href="images/small_4kc.png"><img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/medium_p1.jpg" alt=""></a>
-			<a href="images/small_4kc.png"><img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/medium_p1.jpg" alt=""></a>
-			<a href="images/small_4kc.png"><img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/medium_p1.jpg" alt=""></a>
+			<a href="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/small_4kc.png"><img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/medium_p1.jpg" alt=""></a>
+			<a href="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/small_4kc.png"><img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/medium_p1.jpg" alt=""></a>
+			<a href="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/small_4kc.png"><img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/medium_p1.jpg" alt=""></a>
+			<a href="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/small_4kc.png"><img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/medium_p1.jpg" alt=""></a>
+			<a href="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/small_4kc.png"><img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/medium_p1.jpg" alt=""></a>
+			<a href="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/small_4kc.png"><img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/medium_p1.jpg" alt=""></a>
 		</div>
 	</div>
 	<div class="primary-products-information fl">
@@ -64,20 +65,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 				<div class="tabCon p10 mt-5">
 					<h3>商品描述</h3>
-					<p class="f14 mt-40">相机支持4K超高清视频录像，1200万像素静态照片拍摄
-				集成三轴云台，可以使相机保持稳定，成功捕捉平稳流畅的画面
-				简单操控，支持智能飞行功能（热点跟随，航向锁定，航点飞行，返航锁定，兴趣点环绕）
-				内置WiFi图传系统，遥控和图传距离最远达1.2 km，最大飞行时间约25分钟
-				480P图传分辨率
-				室内室外精准定位
-				一键返航，电池电压检测及时空安全保护
-					</p>
+					<div class="f14 mt-40">
+					<?php the_content();?>
+					</div>
 					<h3 class="mt-40">图片描述</h3>
 					<p class="f14 mt-40">
 						<img src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/medium_p1.jpg" />
 					</p>
 					
 				</div>
-				<div class="tabCon">内容二</div>
+				<div class="tabCon">
+						<div id="comments">
+								<?php comments_template(); ?>
+							</div>
+				</div>
 			</div>
 		</div>
+		<?php endwhile; // end of the loop. ?>
