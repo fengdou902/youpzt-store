@@ -17,6 +17,7 @@ body{color: #666;}
 .ud-container a{text-decoration: none;color: #666;} 
 .ud-container a:active,a:visited,a:hover{color:#666;}
 .ud-container h4,h3{font-weight:300;}
+.ud-container h3{font-size: 24px;}
 .cp{cursor: pointer;}
 .p15{padding:15px;}
 /*顶栏*/
@@ -88,7 +89,7 @@ body{color: #666;}
 /*相关产品*/
 .primary-products-information-about li{}
 .primary-products-information-about li img{width:100%;}
-.primary-products-information-about p{text-align: center;}
+.primary-products-information-about p{text-align: center;margin:0;font-size: 13px;}
 /*购物车*/
 .catbox{margin:0 auto;font-size: 14px;;}
 .catbox table{text-align:center;width:100%;}
@@ -131,6 +132,9 @@ body{color: #666;}
 #selectedViewList div span{display:none;color:#ffffff;font-size:12px;position:absolute;top:0px;right:0px;width:60px;height:18px;line-height:18px;text-align:center;background:#000;cursor:pointer;}
 #selectedViewList div:hover span{display:block;}
 #cartTable tr:nth-child(even){border-top: 1px solid #E6E6E6;}
+.primary-category-goods-minus{background:none!important;color: #666!important;font-family: iconfont!important;border:none!important;}
+.primary-category-goods-count{width: 40px!important;padding:0!important;}
+.primary-category-goods-plus{background:none!important;color: #666!important;font-family: iconfont!important;border:none!important;}
 /*选择框美化*/
 .primary-goods-bags input[type="checkbox"] {-webkit-appearance: none;border-radius:50%;background-color:#E8E8E8;width:12px;height:12px;margin-right: 5px;}
 .primary-goods-bags input[type="checkbox"]:checked{background-color:#1ABC9C;}

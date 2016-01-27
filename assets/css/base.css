@@ -2,7 +2,7 @@
 base.css
 2015/4/15
 */
-.ud-container{width:90%;margin:0 auto;}
+.ud-container{width:95%;max-width:1200px;margin:0 auto;}
 /*文字排版*/
 .f12{font-size:12px!important;}
 .f13{font-size:13px;}
