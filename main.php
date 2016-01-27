@@ -65,6 +65,7 @@ if (version_compare($wp_version, '4.4', '<')) {
 if(is_admin()) {
      include(UPSTORE_PLUGIN_DIR.'/libs/admin/functions.php');//加载后台functions
      include(UPSTORE_PLUGIN_DIR.'/libs/admin/class-youpzt-admin-profile.php');
+     include(UPSTORE_PLUGIN_DIR.'/libs/admin/class-youpzt-admin-orderlist.php');
     add_action('admin_menu', 'display_product_menu');//显示后台菜单
 }else{
     include(UPSTORE_PLUGIN_DIR.'/libs/functions-front.php');//加载前端functions

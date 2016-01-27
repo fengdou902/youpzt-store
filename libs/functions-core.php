@@ -11,8 +11,12 @@ function youpzt_delete_string_specific_value($separator,$string,$value){
 function youpzt_store_load_template($template_path){
     if (is_page('my-account')) {
         return $template_path = UPSTORE_PLUGIN_DIR.'/templates/my-account.php';
+    }if (is_page('my-address')) {
+        return $template_path = UPSTORE_PLUGIN_DIR.'/templates/my-address.php';
     }elseif (is_page('shop')) {
         return $template_path = UPSTORE_PLUGIN_DIR.'/templates/shop.php';
+    }elseif (is_page('cart')) {
+        return $template_path = UPSTORE_PLUGIN_DIR.'/templates/cart.php';
     }elseif (is_single()&&get_post_type()=='product') {
         return $template_path = UPSTORE_PLUGIN_DIR.'/templates/single-product.php';
     }else{
