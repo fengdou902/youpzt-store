@@ -1,5 +1,5 @@
 
-   <div class="primary-goods-bags ud-container mt-20">
+   <div class="primary-goods-bags ud-container mt-20 pb-20">
     		
     		<div class="col-sm-12 mt-10 p10">
     			<h4 class="border-1 pb-15">收获地址</h4>
@@ -89,7 +89,7 @@
     					<tbody>
     						<tr class="tc">
     							<td class="tl">
-    								<img class="fl" src="images/small_4kc.png" />
+    								<img class="fl" src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/small_4kc.png" />
     								<div class="fl mt-10">
     									<p class="f14">大疆无人机4K智能飞行器</p>
     									<p class="color-8"><span class="mr-10">白色</span><span>标准版</span></p>
@@ -102,7 +102,7 @@
     						</tr>
     						<tr class="tc">
     							<td class="tl">
-    								<img class="fl" src="images/small_4kc.png" />
+    								<img class="fl" src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/small_4kc.png" />
     								<div class="fl mt-10">
     									<p class="f16">大疆无人机4K智能飞行器</p>
     									<p class="color-8"><span class="mr-10">白色</span><span>标准版</span></p>
@@ -122,4 +122,5 @@
     			</div>
     			<div class="tr mt-20 border-green p10-40 radius5 disinblock fr"><a class="show" href="#">结算</a></div>
     		</div>
+            <div class="cb"></div>
     </div>

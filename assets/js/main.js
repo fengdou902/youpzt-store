@@ -6,7 +6,7 @@ $(document).ready(function(){
 	var close_ud_modal = function() {
 		layer.closeAll();
 	}
-
+	
 	/*
 	*添加购物车
 	*author:zjf
@@ -425,11 +425,11 @@ window.onload = function () {
 		    
 		});
 	};
-	/*
+	
 $(function(){
 	$("#primary-city-secect").citySelect({
 		prov:"江苏",
 		nodata:"none"
 	});
 })
-*/
+

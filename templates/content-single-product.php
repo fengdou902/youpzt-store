@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<span>数量：</span>
 			<span class="ml-30">
 				<input type="button" class="iconfont cp primary-category-goods-minus" value="&#xe60a;"/>
-				<input class="primary-category-goods-count" type="text" value="1"/>
+				<input class="primary-category-goods-count required" type="text" value="1"/>
 				<input type="button" class="iconfont cp primary-category-goods-plus" value="&#xe60b;"/>
 			</span>
 		</div>

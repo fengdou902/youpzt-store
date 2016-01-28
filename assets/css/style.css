@@ -18,6 +18,7 @@ body{color: #666;}
 .ud-container a:active,a:visited,a:hover{color: inherit!important;text-decoration: none!important;}
 .ud-container h4,h3{font-weight:300;}
 .ud-container h3{font-size: 24px;}
+.ud-container td,.ud-container th,.ud-container tr,.ud-container table{border: none!important;}
 .cp{cursor: pointer;}
 .p15{padding:15px;}
 /*顶栏*/
@@ -49,6 +50,10 @@ body{color: #666;}
 	.total{float: right;}
 	.checkboxbeauty-phone{display:block;}
 	.address-select-phone{position: absolute;right: 0;top: 25%;}
+	.primary-user-center-list img{display: none;}
+	.primary-user-center-list p{font-size: 13px;}
+	.primary-user-center-list-phone-hide{display: none;}
+	.primary-user-center-list-phone-show{display:block;}
 }
 @media only screen and (min-width: 640px) and (max-width: 768px) {
 	.layui-layer-page{width:70%;}
@@ -59,7 +64,7 @@ body{color: #666;}
 .layui-layer{border-radius:5px!important;box-shadow:none;border:1px solid #1ABC9C;}
 .primary-login-title{background-color: #1ABC9C;height: 55px;text-align: center;line-height: 55px;border-top-left-radius: 5px;border-top-right-radius: 5px;margin-bottom: 20px;}
 .icheckbox-green{margin-right:5px;float:left;}
-.btn-default{    border: 1px solid #1ABC9C;background-color: transparent;width: 100%;height: 39px;margin-bottom: 30px;}
+.btn-default{    border: 1px solid #1ABC9C!important;background: transparent!important;width: 100%;height: 39px;margin-bottom: 30px;color: #666!important}
 .formControls label{border:none!important;font-size:12px;}
 /*用户导航栏*/
 .user-nav{height: 80px;line-height:80px;background-color:#1ABC9C;}
@@ -100,22 +105,18 @@ body{color: #666;}
 .catbox{margin:0 auto;font-size: 14px;;}
 .catbox table{text-align:center;width:100%;}
 .catbox table th,.catbox table td{}
-.catbox table th{height:30px;}
-.catbox table td{padding:10px;color:#666;}
+.catbox table th{height:30px;width: 30px;}
+.catbox table td{padding:10px;color:#666;text-align: center;vertical-align: middle;}
 .catbox table tbody tr:hover{background-color: #f8f8f8;}
 .checkbox{width:60px;}
 .primary-bags-goods span{width:130px;margin-top:20px;text-align:left;float:left;}
 .primary-bags-goods img{width:100px;height:80px;margin-right:10px;float:left;}
 .price{width:130px;}
-.count{width:90px;}
-.count .primary-bags-count-add, .count input, .count .primary-bags-count-reduce{float:left;margin-right:-1px;position:relative;z-index:0;}
-.count .primary-bags-count-add, .count .primary-bags-count-reduce{height:23px;width:17px;border:1px solid transparent;text-align:center;line-height:23px;color:#444;}
-.count .primary-bags-count-add:hover, .count .primary-bags-count-reduce:hover{color:#1ABC9C;z-index:3;border-color:#1ABC9C;cursor:pointer;}
-.count input{width:50px;height:15px;line-height:15px;border:1px solid transparent;color:#343434;text-align:center;padding:4px 0;background-color:transparent;z-index:2;}
+.primary-cart-count input{width: 60px;border: none;background-color: transparent;text-align: center;}
 .subtotal{width:150px;color:red;font-weight:bold;}
 .operation span:hover,a:hover{cursor:pointer;color:#1ABC9C;}
 
-.foot{margin-top:30px;color:#666;height:48px;position:relative;z-index:8;}
+.foot{margin-top:30px;color:#666;padding-bottom:20px;position:relative;z-index:8;}
 .foot div, .foot a{line-height:48px;height:48px;}
 .foot .select-all{width:70px;height:48px;line-height:48px;padding-left:5px;color:#666;}
 .foot .closing{border: 1px solid #1ABC9C;width: 115px;text-align: center;color: #1ABC9C;border-radius: 5px;cursor: pointer;font-size: 16px;margin-left: 60px;}
@@ -141,6 +142,8 @@ body{color: #666;}
 .primary-category-goods-minus{background:none!important;color: #666!important;font-family: iconfont!important;border:none!important;}
 .primary-category-goods-count{width: 40px!important;padding:0!important;}
 .primary-category-goods-plus{background:none!important;color: #666!important;font-family: iconfont!important;border:none!important;}
+.primary-bags-count-reduce{cursor: pointer;padding: 5px;font-size: 18px;}
+.primary-bags-count-add{cursor: pointer;padding: 5px;font-size: 18px;}
 /*选择框美化*/
 .primary-goods-bags input[type="checkbox"] {-webkit-appearance: none;border-radius:50%;background-color:#E8E8E8;width:12px;height:12px;margin-right: 5px;}
 .primary-goods-bags input[type="checkbox"]:checked{background-color:#1ABC9C;}
@@ -151,10 +154,12 @@ body{color: #666;}
 .primary-user-center i{font-size: 22px;margin-right: 5px;color: #1ABC9C;}
 .primary-user-center-list th{text-align: center;padding: 10px;}
 .primary-user-center-list img{width:90px;}
+.primary-user-center-list p{margin:0!important;}
+.primary-user-center-list td{text-align: center;padding:0;vertical-align: middle;}
 /*分页*/
 .priary-pagenav li{float: left;}
-.priary-pagenav a{float: left;padding: 10px;background-color: #f4f4f4;margin:10px;width:15px;height: 15px;border-radius: 50%;line-height: 17px;}
-.priary-pagenav a:hover{background-color: #1ABC9C;color: #fff;}
+.priary-pagenav a{float: left;padding: 10px;background-color: #f4f4f4;margin:10px;width:35px;height: 35px;border-radius: 50%;line-height: 15px;}
+.priary-pagenav a:hover{background-color: #1ABC9C;color: #fff!important;}
 /*收获地址弹出框*/
 .primary-address-new{display: none;}
 #primary-city-secect select{background-color: #FFF;height: 35px;width: 32%;border: 1px solid #DDD;}
