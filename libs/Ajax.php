@@ -65,7 +65,7 @@ function add_to_cart($product_id,$product_count=null){
 			$product_obj=get_post($product_id);
 			$cart_item['product_id']=$product_obj->ID;
 			$cart_item['name']=$product_obj->post_title;
-			$cart_item['product_price']=$product_obj->post_title;//单价
+			$cart_item['product_price']=1;//单价
 			$cart_item['product_count']=$product_count;//产品数量
 			if (is_user_logged_in()) {
 					$cart_item['order_status']=0;//0状态为购物车状态

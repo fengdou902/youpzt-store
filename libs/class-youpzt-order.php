@@ -44,7 +44,8 @@ class Youpzt_Order{
             $order_buyer=$this->user_id;
 	   				$return_order_id = $wpdb->get_var("SELECT order_id FROM {$wpdb->youpzt_order} WHERE product_id=$product_id and order_status=0 and order_buyer=$order_buyer");//检测购物车中是否存在这个产品
 	   				if ($return_order_id) {//存在这个产品
-		   					$this->change_qrt_order($return_order_id,'add');//改变产品数量
+		   					$product_count=$this->change_qrt_order($return_order_id,'add');//改变产品数量
+                $this->change_total_price($return_order_id,$product_count,$product_id,$order_item['product_price']);//同时更新总价格
 	   				}else{
 	   					$return_order_id=$this->insert_order($order_item);//添加新的订单
 	   				}
@@ -70,7 +71,36 @@ class Youpzt_Order{
         }else{
             $new_product_count=intval($old_product_count);
         }
-       return $reo=update_order_meta($order_id,'product_count',$new_product_count);
+       update_order_meta($order_id,'product_count',$new_product_count);
+       return $new_product_count;
+    }
+    /**
+     * 改变订单或购物车中订单的总价
+     *@param $order_id订单id
+     *       $product_count 产品数量
+     *        $product_id 产品id
+     *        $product_price 产品价格
+     * @access  public
+     * @return  bool
+     */
+    public function change_total_price($order_id,$product_count=1,$product_id,$product_price){
+      if (!$order_id) {
+          return false;
+      }
+      if (!$product_id) {
+          $product_id=$this->get_order_var('product_id','order_id',$order_id);//通过order_id获取产品id
+      }
+      if ($product_id) {
+        if (!$product_price) {
+            $product_price=get_product_price($product_id);
+        }
+         $total_price=intval($product_count)*intval($product_price);
+         update_order_meta($order_id,'total_price',$total_price);//更新总价
+         return $total_price;
+      }else{
+        return false;
+      }
+       
     }
     /**
      * 添加订单

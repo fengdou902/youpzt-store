@@ -17,6 +17,7 @@ Define the data
 Sort data function
  */
 class Order_List_Table extends WP_List_Table {
+		public $order_slug='youpzt_store_orders';
 	    /** ************************************************************************
      * REQUIRED. Set up a constructor that references the parent constructor. We 
      * use the parent reference to set some default configs.
@@ -82,10 +83,9 @@ class Order_List_Table extends WP_List_Table {
 							  'cb'=> '<input type="checkbox" />',//添加复选框         
 							  'product_thumb' =>__( '缩略图' ),
 							  'product_name' =>__( '产品名' ),	
-							  'design' =>__( '设计师/机构' ), 
 							  'consumer' =>__( '购买者' ),  
 								'product_count' =>__( '数量' ),
-								'price' =>__( '价格' ),
+								'total_price' =>__( '总价' ),
 								'order_time'=>__( '订单日期' ),
 								//'user_telphone'=>__( '联系电话' ),
 								'order_status'=>__( '状态' ),	
@@ -127,7 +127,7 @@ function column_order_status($item){
 	
 	//Build row actions
 	$actions = array(
-		'edit'      => sprintf('<a href="/wp-admin/admin.php?page=orders_manage&order_id=%d">Edit</a>',$item['order_id']),
+		'edit'      => sprintf('<a href="/wp-admin/admin.php?page='.$order_slug.'&order_id=%d">Edit</a>',$item['order_id']),
 		//'delete'    => sprintf('<a href="?page=%s&action=%s&movie=%s">Delete</a>',$_REQUEST['page'],'delete',$item['ID']),
 	);
 	switch($item['order_status']){
@@ -197,11 +197,11 @@ private function table_data()
 											$query = "SELECT * FROM $wpdb->youpzt_order where product_id=".$productid;
 										};break;
 					case 'search': $query = "SELECT * FROM $wpdb->youpzt_order where order_number=".$keywork;break;
-					default: $query = "SELECT * FROM $wpdb->youpzt_order where order_status not in (-1,0) and product_id>0";break;
+					default: $query = "SELECT * FROM $wpdb->youpzt_order where order_status not in (-1) and product_id>0";break;
 		}
 
 		//$query .= " WHERE post_status='publish' AND meta_key='".WPFP_META_KEY."' AND meta_value > 0 ORDER BY ROUND(meta_value) DESC LIMIT 0, $nums";
-		$query.=' order by order_time desc;';
+		$query.=' order by order_date desc;';
 		$results = $wpdb->get_results($query);//客户查询的结果集
 			$data=array();
 		if ($results) {
@@ -210,10 +210,9 @@ private function table_data()
 											'order_id' =>$order->order_id,
 						          'product_id' => $order->product_id,
 											'order_number'=>$order->order_number,
-						          'user_id'=>$order->user_id,
+						          'consumer'=>$order->order_buyer,
 						          'order_status'=>$order->order_status,
-											'order_time'=>$order->order_time,
-											'price'=>$order->price
+											'order_time'=>$order->order_date
 									));
 			endforeach;
 			
@@ -260,16 +259,15 @@ private function table_data()
 					      }
 					      echo '<a href="admin.php?page=paimai_order_manage&status=product&productid='.$post_id.'" title="查询该产品订单"><img src="'.$timthumb_src.'" class="product_thumb" width="110" height="90">';
 								break;
-           case 'design':{
-           			$author_id=$item['product_author'];
-								return get_the_author_meta('display_name', $author_id );
-								}
-								break;
+
 						case 'consumer':{
-									return get_the_author_meta('display_name', $item['user_id']);
+									return get_the_author_meta('display_name', $item['consumer']);
 								}break;
-						case 'price':{
-										return $item['price'].'元';
+						case 'total_price':{
+										return get_order_meta($item['order_id'],'total_price',true).'元';
+								}break;
+						case 'product_count':{
+										return get_order_meta($item['order_id'],'product_count',true);
 								}break;
 						case 'product_name':{
 									$product_obj=get_post($item['product_id']);
@@ -294,9 +292,7 @@ private function table_data()
 											//<a href="?page=paimai_order_manage&action=delete&order['.$item['id'].']"><abbr title="删除" rel="tooltip"><i class="iconfont icon-clean fb f20"></i></abbr></a>
 										}
 							break;
-				            case 'product_count':
 				            case 'user_id':
-				            case 'order_number':
 										case 'order_time':
 				                return $item[ $column_name ];
 

@@ -47,32 +47,31 @@ include(UPSTORE_PLUGIN_DIR. '/libs/Hooks.php');
 include(UPSTORE_PLUGIN_DIR. '/libs/Ajax.php');
 
 /* Including functions */
-include(UPSTORE_PLUGIN_DIR.'/libs/functions-core.php');
-include(UPSTORE_PLUGIN_DIR.'/libs/functions-user.php');
-include(UPSTORE_PLUGIN_DIR.'/libs/functions-widget.php');
-include(UPSTORE_PLUGIN_DIR.'/libs/postType-products.php');
-include(UPSTORE_PLUGIN_DIR.'/libs/youpzt-order-meta.php');
+include(UPSTORE_PLUGIN_DIR.'libs/functions-core.php');
+include(UPSTORE_PLUGIN_DIR.'libs/functions-user.php');
+include(UPSTORE_PLUGIN_DIR.'libs/functions-widget.php');
+include(UPSTORE_PLUGIN_DIR.'libs/postType-products.php');
+include(UPSTORE_PLUGIN_DIR.'libs/youpzt-order-meta.php');
 /* Including class */
-include(UPSTORE_PLUGIN_DIR.'/libs/class-youpzt-order.php');
-include(UPSTORE_PLUGIN_DIR.'/libs/class-youpzt-cart.php');
+include(UPSTORE_PLUGIN_DIR.'libs/class-youpzt-order.php');
+include(UPSTORE_PLUGIN_DIR.'libs/class-youpzt-cart.php');
 //加载后台配置选项
-include(UPSTORE_PLUGIN_DIR . '/libs/setting/cs-framework.php');
+include(UPSTORE_PLUGIN_DIR . 'libs/setting/cs-framework.php');
 global $wp_version;
 if (version_compare($wp_version, '4.4', '<')) {
     //include(UPSTORE_PLUGIN_DIR. '/libs/setting/simple-term-meta.php');
 }
 /* Add admin menu */
 if(is_admin()) {
-     include(UPSTORE_PLUGIN_DIR.'/libs/admin/functions.php');//加载后台functions
-     include(UPSTORE_PLUGIN_DIR.'/libs/admin/class-youpzt-admin-profile.php');
-     include(UPSTORE_PLUGIN_DIR.'/libs/admin/class-youpzt-admin-orderlist.php');
-    add_action('admin_menu', 'display_product_menu');//显示后台菜单
+     include(UPSTORE_PLUGIN_DIR.'libs/admin/functions.php');//加载后台functions
+     include(UPSTORE_PLUGIN_DIR.'libs/admin/class-youpzt-admin-profile.php');
+     include(UPSTORE_PLUGIN_DIR.'libs/admin/class-youpzt-admin-menus.php');
 }else{
-    include(UPSTORE_PLUGIN_DIR.'/libs/functions-front.php');//加载前端functions
+    include(UPSTORE_PLUGIN_DIR.'libs/functions-front.php');//加载前端functions
 }
 
 function display_product_menu(){
-    add_menu_page('优品商城', '优品商城', 'administrator','youpzt_store', 'youpzt_store_page','dashicons-welcome-view-site');
+    add_menu_page('优品商城', '优品商城', 'administrator','youpzt_store', 'youpzt_order_manage_page','dashicons-welcome-view-site');
     add_submenu_page('youpzt_store','订单管理', '订单管理', 'administrator','youpzt_store_orders', 'youpzt_order_manage_page');
 add_submenu_page('youpzt_store','报表统计', '报表统计', 'administrator','youpzt_store_reports', 'youpzt_store_reports_page');
     add_submenu_page('youpzt_store','工具', '工具', 'administrator','youpzt_store_tools', 'youpzt_store_tools_page');
@@ -81,5 +80,4 @@ add_submenu_page('youpzt_store','报表统计', '报表统计', 'administrator',
 function youpzt_store_page(){
     echo '待加';
 }
-
 ?>
