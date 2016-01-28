@@ -95,6 +95,7 @@ base.css
 .pb20{padding-bottom:20px;}
 .pb30{padding-bottom:30px;}
 .pb50{padding-bottom:50px;}
+.p5{padding: 5px;}
 .p10{padding:10px;}
 .p10-40{padding:10px 40px;}
 .pl60{padding-left:60px;}
@@ -185,6 +186,7 @@ base.css
 
 .color-turquoise{color: #1ABC9C;}
 .black{color:#333;}
+.color-blue{color: #FD7965}
 .color-6{color: #666;}
 .color-8{color: #888;}
 .color-white{color: #fff!important;}

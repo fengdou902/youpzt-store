@@ -22,7 +22,7 @@
 					<div class="cb"></div>
 				</ul>
 				<div class="disinblock p10 border-green radius5 cp fl" id="primary-address-new">新增收获地址</div>
-				<div class="disinblock p10 border-green radius5 cp fl ml-20"><a href="#">管理收获地址</a></div>
+				<div class="disinblock p10 border-green radius5 cp fl ml-20"><a href="<?php echo youpztStore_get_tab_url('my-address');?>">管理收获地址</a></div>
 				<div class="cb"></div>
     			</div>
     			<!--收获地址新建修改-->
