@@ -48,6 +48,7 @@ include(UPSTORE_PLUGIN_DIR. '/libs/Ajax.php');
 
 /* Including functions */
 include(UPSTORE_PLUGIN_DIR.'libs/functions-core.php');
+include(UPSTORE_PLUGIN_DIR.'libs/functions-product.php');
 include(UPSTORE_PLUGIN_DIR.'libs/functions-user.php');
 include(UPSTORE_PLUGIN_DIR.'libs/functions-widget.php');
 include(UPSTORE_PLUGIN_DIR.'libs/postType-products.php');
@@ -70,14 +71,4 @@ if(is_admin()) {
     include(UPSTORE_PLUGIN_DIR.'libs/functions-front.php');//加载前端functions
 }
 
-function display_product_menu(){
-    add_menu_page('优品商城', '优品商城', 'administrator','youpzt_store', 'youpzt_order_manage_page','dashicons-welcome-view-site');
-    add_submenu_page('youpzt_store','订单管理', '订单管理', 'administrator','youpzt_store_orders', 'youpzt_order_manage_page');
-add_submenu_page('youpzt_store','报表统计', '报表统计', 'administrator','youpzt_store_reports', 'youpzt_store_reports_page');
-    add_submenu_page('youpzt_store','工具', '工具', 'administrator','youpzt_store_tools', 'youpzt_store_tools_page');
-}
-
-function youpzt_store_page(){
-    echo '待加';
-}
 ?>

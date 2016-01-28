@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+
 /* Delete specified record of string */
 function youpzt_delete_string_specific_value($separator,$string,$value){
     $arr = explode($separator,$string);
@@ -32,7 +36,6 @@ function youpztStore_get_tab_url( $type='', $user_id=0 ){
 /**
  * 获取模板的一部分 (如：商品循环)
  *
- * @access public
  * @param mixed $slug
  * @param string $name (default: '')
  */
@@ -64,7 +67,6 @@ function youpztStore_get_template_part( $slug, $name = '' ) {
 /**
  * Get other templates (e.g. product attributes) passing attributes and including the file.
  *
- * @access public
  * @param string $template_name
  * @param array $args (default: array())
  * @param string $template_path (default: '')

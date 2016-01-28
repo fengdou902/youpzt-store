@@ -92,7 +92,7 @@ class Youpzt_Order{
       }
       if ($product_id) {
         if (!$product_price) {
-            $product_price=get_product_price($product_id);
+            $product_price=youpzt_get_product_price($product_id);
         }
          $total_price=intval($product_count)*intval($product_price);
          update_order_meta($order_id,'total_price',$total_price);//更新总价

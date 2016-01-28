@@ -46,9 +46,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<div class="primary-products-information-price mt-30">
 			<span>价格：</span>
-			<span class="ml-30 f24">¥4999</span>
+			<span class="ml-30 f24">¥<?php echo youpzt_get_product_price($post->ID);?></span>
 			<span class="f12 ml-20"><s>市场价：</s></span>
-			<span class="f12"><s>¥5999</s></span>
+			<span class="f12"><s>¥<?php echo youpzt_get_product_price($post->ID,'old_price');?></s></span>
 		</div>
 		<div class="primary-products-information-btn mt-50">
 			<span class="border-green radius5 mr-20 cp">立即购买</span>
