@@ -19,44 +19,51 @@
                         <thead>
                             <tr>
                                 <th>订单信息</th>
-                                <th>单价</th>
+                                <th class="primary-user-center-list-phone-hide">单价</th>
                                 <th>数量</th>
                                 <th>订单总额</th>
-                                <th>订单状态</th>
+                                <th class="primary-user-center-list-phone-hide">订单状态</th>
                                 <th>操作</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="tc">
                                 <td class="tl">
-                                    <img class="fl" src="images/small_4kc.png" />
+                                    <img class="fl" src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/small_4kc.png" />
                                     <div class="fl mt-10">
                                         <p class="f16">大疆无人机4K智能飞行器</p>
                                         <p class="color-8"><span class="mr-10">白色</span><span>标准版</span></p>
                                     </div>
                                 </td>
+                                <td class="primary-user-center-list-phone-hide">¥4999</td>
+                                <td>1件</td>
                                 <td>¥4999</td>
-                                <td>1</td>
-                                <td>¥4999</td>
-                                <td>待发货</td>
+                                <td class="primary-user-center-list-phone-hide">待发货</td>
                                 <td class="cp"><i class="iconfont f20">&#xe602;</i></td>
-                                
                             </tr>
+                            <tr>
+                                <td colspan="4" class="f12 tl hide primary-user-center-list-phone-show" >订单状态：待发货</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
                             <tr class="tc">
                                 <td class="tl">
-                                    <img class="fl" src="images/small_4kc.png" />
+                                    <img class="fl" src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/small_4kc.png" />
                                     <div class="fl mt-10">
                                         <p class="f16">大疆无人机4K智能飞行器</p>
                                         <p class="color-8"><span class="mr-10">白色</span><span>标准版</span></p>
                                     </div>
                                 </td>
-                                <td>¥4999</td>
+                                <td class="primary-user-center-list-phone-hide">¥4999</td>
                                 <td>1</td>
                                 <td>¥4999</td>
-                                <td>待发货</td>
+                                <td class="primary-user-center-list-phone-hide">待发货</td>
                                 <td class="cp"><i class="iconfont f20">&#xe602;</i></td>
                                 
                             </tr>
+                            <tr>
+                                <td colspan="4" class="f12 tl hide primary-user-center-list-phone-show" >订单状态：待发货</td>
+                                </tr>
                         </tbody>
                     </table>
                     <div class="priary-pagenav tc">
@@ -70,4 +77,5 @@
                     </div>
                 </div>
             </div>
+            <div class="cb"></div>
     </div>

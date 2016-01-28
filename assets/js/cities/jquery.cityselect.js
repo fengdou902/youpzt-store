@@ -18,7 +18,7 @@ required:必选项
 
 		// 默认值
 		settings=$.extend({
-			url:"js/cities/city.min.js",
+			url:"../wp-content/plugins/youpzt-store/assets/js/cities/city.min.js",
 			prov:null,
 			city:null,
 			dist:null,

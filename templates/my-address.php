@@ -1,4 +1,4 @@
-    <div class="primary-goods-bags ud-container mt-20">
+    <div class="primary-goods-bags ud-container mt-20 pb-20">
     		<div class="col-sm-2 primary-user-center">
     			<ul>
     				<li><a href="#"><i class="iconfont">&#xe605;</i>全部订单</a></li>
@@ -76,4 +76,5 @@
 		  </form>
     			</div>
     		</div>
+    		<div class="cb"></div>
     </div>

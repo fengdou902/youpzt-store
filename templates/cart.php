@@ -1,5 +1,5 @@
     <!--购物车-->
-    <div class="primary-goods-bags ud-container mt-40">
+    <div class="primary-goods-bags ud-container p10">
     		<div class="catbox">
 				<div class="table-responsive">
 					<table id="cartTable">
@@ -16,19 +16,19 @@
 						<tbody>
 							<tr>
 								<td class="checkbox primary-category-bags-disno"><input class="check-one check" type="checkbox"/></td>
-								<td class="primary-bags-goods"><img class="primary-category-bags-disno" src="images/small_4kc.png" alt=""/><span>Casio/卡西欧 EX-TR350</span></td>
+								<td class="primary-bags-goods"><img class="primary-category-bags-disno" src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/small_4kc.png" alt=""/><span>Casio/卡西欧 EX-TR350</span></td>
 								<td class="price primary-category-bags-disno">5999.88</td>
-								<td class="count"><span class="primary-bags-count-reduce"></span><input class="count-input" type="text" value="1"/><span class="primary-bags-count-add">+</span></td>
+								<td class="primary-cart-count"><span class="primary-bags-count-reduce"></span><input class="count-input" type="text" value="1"/><span class="primary-bags-count-add">+</span></td>
 								<td class="subtotal">5999.88</td>
-								<td class="operation"><span class="primary-bags-delete">×</span></td>
+								<td class="operation f18"><span class="primary-bags-delete">×</span></td>
 							</tr>
 							<tr>
 								<td class="checkbox primary-category-bags-disno"><input class="check-one check" type="checkbox"/></td>
-								<td class="primary-bags-goods"><img class="primary-category-bags-disno" src="images/small_4kc.png" alt=""/><span>Canon/佳能 PowerShot SX50 HS</span></td>
+								<td class="primary-bags-goods"><img class="primary-category-bags-disno" src="<?php echo UPSTORE_PLUGIN_ASSETS_URI;?>images/small_4kc.png" alt=""/><span>Canon/佳能 PowerShot SX50 HS</span></td>
 								<td class="price primary-category-bags-disno">3888.50</td>
-								<td class="count"><span class="primary-bags-count-reduce"></span><input class="count-input" type="text" value="1"/><span class="primary-bags-count-add">+</span></td>
+								<td class="primary-cart-count"><span class="primary-bags-count-reduce"></span><input class="count-input" type="text" value="1"/><span class="primary-bags-count-add">+</span></td>
 								<td class="subtotal">3888.50</td>
-								<td class="operation"><span class="primary-bags-delete">×</span></td>
+								<td class="operation f18"><span class="primary-bags-delete">×</span></td>
 							</tr>
 							
 							
@@ -51,6 +51,7 @@
 				</div>
 				<div class="fr closing">结 算</div>
 			</div>
+			<div class="cb"></div>
 		</div>
 
 	</div>
