@@ -30,7 +30,9 @@ function youpztStore_get_tab_url( $type='', $user_id=0 ){
     if( $user_id==0 ){
         $user_id = get_current_user_id();
     }
-    $url = add_query_arg( 'tab', $type, get_author_posts_url($user_id) );
+    global $post;
+    $page_id=$post->ID;
+    $url = add_query_arg( 'tab', $type, get_permalink($page_id) );
     return $url;
 }
 /**
