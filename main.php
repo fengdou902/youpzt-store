@@ -56,6 +56,7 @@ include(UPSTORE_PLUGIN_DIR.'libs/youpzt-order-meta.php');
 /* Including class */
 include(UPSTORE_PLUGIN_DIR.'libs/class-youpzt-order.php');
 include(UPSTORE_PLUGIN_DIR.'libs/class-youpzt-cart.php');
+include(UPSTORE_PLUGIN_DIR.'libs/class-youpzt-address.php');
 //加载后台配置选项
 include(UPSTORE_PLUGIN_DIR . 'libs/setting/cs-framework.php');
 global $wp_version;

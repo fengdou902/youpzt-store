@@ -73,8 +73,9 @@ if (!function_exists('youpzt_store_define_table')) {
 		function youpzt_store_define_table() {
 			global $wpdb;
 			//$wpdb->termmeta = $wpdb->prefix . 'termmeta';
-			$wpdb->youpzt_order = $wpdb->prefix . 'youpzt_order';//
-			$wpdb->youpzt_ordermeta = $wpdb->prefix . 'youpzt_ordermeta';//
+			$wpdb->youpzt_order = $wpdb->prefix . 'youpzt_order';
+			$wpdb->youpzt_ordermeta = $wpdb->prefix . 'youpzt_ordermeta';
+			$wpdb->youpzt_address= $wpdb->prefix . 'youpzt_address';
 		}
 }
 add_action( 'init', 'youpzt_store_define_table' );

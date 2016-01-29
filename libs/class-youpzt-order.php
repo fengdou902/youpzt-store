@@ -34,7 +34,6 @@ class Youpzt_Order{
      * @return  bool
      */
     public function insert_to_cart($order_item=array()){
-
 	    	  if(!is_array($order_item)||count($order_item) == 0) {
 	   					return false;
 	   				}

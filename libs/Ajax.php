@@ -15,7 +15,9 @@ function add_ajax_events() {
 										'remove_to_cart'         => true,
 										'get_orderList'         => true,
 										'change_order_status'    => false,
-										'delete_order'	  			=>false,	
+										'delete_order'	  			=>false,
+										'add_to_address'				=>true,	
+										'delete_address'				=>true,
 										'get_variation'           => true,
 										'add_variation'           => false,
 										'get_customer_details'    => false,
@@ -172,5 +174,36 @@ function delete_order($order_id){
 		}else{
 			return false;
 		}	
+}
+/**
+*添加地址
+* @param $order_id订单id
+*@return  bool
+*/
+function add_to_address($user_id){
+	if (!$user_id) {
+		global $current_user;
+		$user_id=$current_user->ID;
+	}
+		$address_item['city']=isset($_REQUEST['city'])?$_REQUEST['city']:false;
+		$address_item['address_detail']=isset($_REQUEST['address_detail'])?$_REQUEST['address_detail']:false;
+		$address_item['contact_name']=isset($_REQUEST['contact_name'])?$_REQUEST['contact_name']:false;
+		$address_item['zipcode']=isset($_REQUEST['zipcode'])?$_REQUEST['zipcode']:false;
+		$address_item['telphone']=isset($_REQUEST['telphone'])?$_REQUEST['telphone']:false;
+	  if(is_array($address_item)||count($address_item) == 0) {
+				$address_obj=new Youpzt_Address($user_id);
+				return $address_obj->insert_address($address_item);
+		}
+}
+/**
+*删除地址
+* @param $address_id 地址id
+*@return  bool
+*/
+function delete_address($address_id){
+		if ($address_id) {
+				$address_obj=new Youpzt_Address();
+				return $address_obj->delete_address($address_id);
+		}
 }
 ?>
