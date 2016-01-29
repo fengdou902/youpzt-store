@@ -178,19 +178,20 @@ function delete_order($order_id){
 }
 /**
 *添加地址
-* @param $order_id订单id
-*@return  bool
+* @param $user_id (int)用户id
+*				$set_address (arr)设置地址的数组值
+*	@return  bool
 */
-function add_to_address($user_id){
+function add_to_address($set_address,$user_id){
 	if (!$user_id) {
 		global $current_user;
 		$user_id=$current_user->ID;
 	}
-		$address_item['city']=isset($_REQUEST['city'])?$_REQUEST['city']:false;
-		$address_item['address_detail']=isset($_REQUEST['address_detail'])?$_REQUEST['address_detail']:false;
-		$address_item['contact_name']=isset($_REQUEST['contact_name'])?$_REQUEST['contact_name']:false;
-		$address_item['zipcode']=isset($_REQUEST['zipcode'])?$_REQUEST['zipcode']:false;
-		$address_item['telphone']=isset($_REQUEST['telphone'])?$_REQUEST['telphone']:false;
+		$address_item['city']=isset($_REQUEST['city'])?$_REQUEST['city']:$set_address['city'];
+		$address_item['address_detail']=isset($_REQUEST['address_detail'])?$_REQUEST['address_detail']:$set_address['address_detail'];
+		$address_item['contact_name']=isset($_REQUEST['contact_name'])?$_REQUEST['contact_name']:$set_address['contact_name'];
+		$address_item['zipcode']=isset($_REQUEST['zipcode'])?$_REQUEST['zipcode']:$set_address['zipcode'];
+		$address_item['telphone']=isset($_REQUEST['telphone'])?$_REQUEST['telphone']:$set_address['telphone'];
 	  if(is_array($address_item)||count($address_item) == 0) {
 				$address_obj=new Youpzt_Address($user_id);
 				return $address_obj->insert_address($address_item);
