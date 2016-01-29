@@ -49,7 +49,7 @@
 					</div>
 					<span class="arrow">◆<span>◆</span></span>
 				</div>
-				<div class="fr closing">结 算</div>
+				<div class="fr closing"><a href="<?php echo youpztStore_get_tab_url('checkout');?>">结 算</a></div>
 			</div>
 			<div class="cb"></div>
 		</div>

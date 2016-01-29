@@ -1,7 +1,7 @@
     <div class="primary-goods-bags ud-container mt-20 pb-20">
     		<div class="col-sm-2 primary-user-center">
     			<ul>
-    				<li><a href="#"><i class="iconfont">&#xe605;</i>全部订单</a></li>
+    				<li><a href="<?php echo youpztStore_get_tab_url('my-order');?>"><i class="iconfont">&#xe605;</i>全部订单</a></li>
     				<li><a href="#"><i class="iconfont">&#xe60c;</i>待发货</a></li>
     				<li><a href="#"><i class="iconfont">&#xe604;</i>已发货</a></li>
     				<li><a href="#"><i class="iconfont">&#xe608;</i>待付款</a></li>
@@ -9,7 +9,7 @@
     				<li><a href="#"><i class="iconfont">&#xe609;</i>已完成</a></li>
     			</ul>
     			<ul class="mt-40">
-    				<li><a href="#"><i class="iconfont">&#xe603;</i>收获地址</a></li>
+    				<li><a href="<?php echo youpztStore_get_tab_url('my-address');?>"><i class="iconfont">&#xe603;</i>收获地址</a></li>
     			</ul>
     		</div>
     		<div class="col-sm-10 mt-10">
