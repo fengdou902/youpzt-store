@@ -202,6 +202,7 @@ function add_to_address($user_id){
 *@return  bool
 */
 function delete_address($address_id){
+	$address_id=isset($_REQUEST['address_id'])?$_REQUEST['address_id']:$address_id;
 		if ($address_id) {
 				$address_obj=new Youpzt_Address();
 				return $address_obj->delete_address($address_id);
