@@ -18,6 +18,7 @@ function add_ajax_events() {
 										'delete_order'	  			=>false,
 										'add_to_address'				=>true,	
 										'delete_address'				=>true,
+										'set_default_address'		=>true,
 										'get_variation'           => true,
 										'add_variation'           => false,
 										'get_customer_details'    => false,
@@ -204,6 +205,20 @@ function delete_address($address_id){
 		if ($address_id) {
 				$address_obj=new Youpzt_Address();
 				return $address_obj->delete_address($address_id);
+		}
+}
+/**
+*设置默认地址
+* @param $address_id 地址id
+*@return  bool
+*/
+function set_default_address($address_id,$user_id){
+		if (!$user_id) {
+			global $current_user;
+			$user_id=$current_user->ID;
+		}
+		if ($address_id) {
+			return update_user_meta($user_id,'default_address_id',$address_id);
 		}
 }
 ?>
