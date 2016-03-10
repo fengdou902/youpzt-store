@@ -138,7 +138,7 @@ function custom_product_column( $column, $post_id ) {
 			break;
     case 'product_type' :
     			$product_type=get_post_meta($post_id,'product_type',true);
-          if ($product_type=='in') {
+          if ($product_type=='in'||!$product_type) {
           	echo '站内商品';
           }elseif ($product_type=='out') {
           	$product_out_url=get_post_meta($post_id,'product_out_url',true);

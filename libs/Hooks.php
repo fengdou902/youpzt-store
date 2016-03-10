@@ -67,7 +67,7 @@ if (is_admin()&&$admin_page_GET=='yirenku_setting_page'&& isset( $_GET['activate
 	//youpzt_store_create_db_table();//创建数据库
 }
 /**
- * define postmeta table in wpdb
+ * define store table in wpdb
  */
 if (!function_exists('youpzt_store_define_table')) {
 		function youpzt_store_define_table() {

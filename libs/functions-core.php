@@ -23,7 +23,7 @@ function youpzt_store_load_template($template_path){
         return $template_path;  
     }
 }
-add_filter( 'template_include', 'youpzt_store_load_template', 1 );
+add_filter( 'template_include', 'youpzt_store_load_template',1);
 /* youpzt-store tab */
 function youpztStore_get_tab_url( $type='', $user_id=0 ){
     $user_id = intval($user_id);
