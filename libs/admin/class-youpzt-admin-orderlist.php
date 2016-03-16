@@ -83,7 +83,7 @@ class Order_List_Table extends WP_List_Table {
 							  'cb'=> '<input type="checkbox" />',//添加复选框         
 							  'product_thumb' =>__( '缩略图' ),
 							  'product_name' =>__( '产品名' ),	
-							  'consumer' =>__( '购买者' ),  
+							  'consumer' =>__( '购买用户' ),  
 								'product_count' =>__( '数量' ),
 								'total_price' =>__( '总价' ),
 								'order_time'=>__( '订单日期' ),
@@ -257,7 +257,7 @@ private function table_data()
 						  				}
 					      	
 					      }
-					      echo '<a href="admin.php?page=paimai_order_manage&status=product&productid='.$post_id.'" title="查询该产品订单"><img src="'.$timthumb_src.'" class="product_thumb" width="110" height="90">';
+					      echo '<a href="admin.php?page=paimai_order_manage&status=product&productid='.$post_id.'" title="查询该产品订单"><img src="'.$timthumb_src.'" class="product_thumb" width="70" height="60">';
 								break;
 
 						case 'consumer':{

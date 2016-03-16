@@ -25,8 +25,9 @@ class YoupztStore_Admin_Menus {
 	 */
 	public function display_store_menus() {
 		global $menu;
- 		add_menu_page('优品商城', '优品商城', 'administrator','youpzt_store',null,'dashicons-welcome-view-site','55.5');
+ 		add_menu_page('优品微商城', '优品微商城', 'administrator','youpzt_store',null,'dashicons-welcome-view-site','55.5');
  		$this->store_add_submenu_page('orders','订单管理');
+ 		$this->store_add_submenu_page('weixin_user','微信用户');
  		$this->store_add_submenu_page('reports','报表统计');
  		$this->store_add_submenu_page('tools','工具');
 
@@ -70,7 +71,7 @@ class YoupztStore_Admin_Menus {
           $orderListTable = new Order_List_Table();//new出这个类将要决定我们的数据如何显示
           $orderListTable->prepare_items();?>
           <div class="wrap">
-          <h2 class="nav-tab-wrapper" class="clearfix">订单管理</h2>
+          <h2 class="nav-tab-wrapper orderlist_nav_title" class="clearfix">订单管理</h2>
           <ul class="subsubsub">
 			    <?php 
 			    global $wpdb,$current_user;

@@ -53,6 +53,8 @@ include(UPSTORE_PLUGIN_DIR.'libs/functions-user.php');
 include(UPSTORE_PLUGIN_DIR.'libs/functions-widget.php');
 include(UPSTORE_PLUGIN_DIR.'libs/postType-products.php');
 include(UPSTORE_PLUGIN_DIR.'libs/youpzt-order-meta.php');
+/*weixin*/
+include(UPSTORE_PLUGIN_DIR.'libs/weixin/wechat.class.php');
 /* Including class */
 include(UPSTORE_PLUGIN_DIR.'libs/class-youpzt-order.php');
 include(UPSTORE_PLUGIN_DIR.'libs/class-youpzt-cart.php');

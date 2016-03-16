@@ -4,6 +4,8 @@ youpzt
 */
 .cs-dialog {display: none;padding: 0;}
 /*重置选项框*/
+.orderlist_nav_title{overflow: hidden;height: 36px;}
+.search-box{padding-top:8px;}
 /*tab排版*/
 .cs-framework .cs-nav{width:auto;float:none;overflow: hidden;border-bottom:1px solid #f0f0f0;margin-top: 20px;}
 .cs-framework .cs-nav ul li{float:left;margin-left: 5px;margin-bottom: -2px;}
