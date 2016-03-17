@@ -5,15 +5,15 @@ $settings      = array(
   'menu_type'  => 'add_submenu_page',
   'menu_parent'=>'youpzt_store',
   'menu_slug'  => 'youpzt_store_options',
-  'ajax_save'  => false,
+  'ajax_save'  => true,
 );
 
 $options        = array();
 
 $options[]      = array(
   'name'        => 'general',
-  'title'       => '一般设置',
-  'icon'        => 'fa fa-star',
+  'title'       => '常规',
+  'icon'        => 'fa fa-gears',
   // begin: fields
   'fields'      => array(
             // begin: a field
@@ -115,105 +115,105 @@ $options[]      = array(
 $options[]      = array(
   'name'        => 'weixin_option',
   'title'       => '微信',
-  'icon'        => 'fa fa-star',
+  'icon'        => 'fa fa-wechat',
   // begin: fields
   'fields'      => array(
-            // begin: a field
             array(
-              'id'      => 'text_1',
-              'type'    => 'text',
-              'title'   => 'Text',
+              'type'    => 'heading',
+              'content' => '接口设置',
             ),
-            // end: a field
             array(
-              'id'      => 'textarea_1',
+              'id'      => 'wx_token',
+              'type'    => 'text',
+              'title'   => '微信Token',
+              'after'    => ' <small class="cs-text-warning">( * 必须 )</small>',
+              'validate' => 'required',
+            ),
+            array(
+              'id'      => 'wx_appid',
+              'type'    => 'text',
+              'title'   => '微信AppID',
+              'after'    => ' <small class="cs-text-warning">( * 必须 )</small>',
+              'validate' => 'required',
+            ),
+            array(
+              'id'      => 'wx_appsecret',
+              'type'    => 'text',
+              'title'   => '微信APPSecret',
+              'after'    => ' <small class="cs-text-warning">( * 必须 )</small>',
+              'validate' => 'required',
+            ),
+          array(
+            'type'    => 'heading',
+            'content' => '自定义回复',
+          ),
+          array(
+              'id'      => 'wx_welcome',
               'type'    => 'textarea',
-              'title'   => 'Textarea',
-              'help'    => 'This option field is useful. You will love it!',
+              'title'   => '用户关注时回复',
             ),
+  ), // end: fields
+);
 
-            array(
-              'id'      => 'upload_1',
-              'type'    => 'upload',
-              'title'   => '上传',
-              'help'    => 'Upload a site logo for your branding.',
-            ),
+$options[]      = array(
+  'name'        => 'product',
+  'title'       => '产品',
+  'icon'        => 'fa fa-archive',
+  // begin: fields
+  'fields'      => array(
+                array(
+                  'type'    => 'notice',
+                  'class'   => 'info',
+                  'content' => '接口设置',
+                ),
 
-            array(
-              'id'      => 'switcher_1',
-              'type'    => 'switcher',
-              'title'   => 'Switcher',
-              'label'   => 'You want to update for this framework ?',
-            ),
+                array(
+                  'id'      => 'wx_advanced_api',
+                  'type'    => 'switcher',
+                  'title'   => '开启服务号高级接口',
+                  'info'   => '只有认证过的服务号，才开启这个功能',
+                ),
+  ), // end: fields
+);
 
+$options[]      = array(
+  'name'        => 'pay',
+  'title'       => '支付',
+  'icon'        => 'fa fa-eraser',
+  // begin: fields
+  'fields'      => array(
             array(
-              'id'      => 'color_picker_1',
-              'type'    => 'color_picker',
-              'title'   => 'Color Picker',
-              'default' => '#3498db',
-            ),
-
-            array(
-              'id'      => 'checkbox_1',
-              'type'    => 'checkbox',
-              'title'   => 'Checkbox',
-              'label'   => 'Did you like this framework ?',
-            ),
-
-            array(
-              'id'      => 'radio_1',
-              'type'    => 'radio',
-              'title'   => 'Radio',
-              'options' => array(
-                'yes'   => 'Yes, Please.',
-                'no'    => 'No, Thank you.',
+              'id'           => 'pay_type',
+              'type'         => 'checkbox',
+              'desc'   => '微信支付必须是认证申请过',
+              'title'        => '支付方式',
+              'options'      => array(
+                    'weichat_pay'    => '微信支付',
+                    'alipay'     => '支付宝支付',
               ),
-              'help'    => 'Are you sure for this choice?',
-            ),
-
-            array(
-              'id'             => 'select_1',
-              'type'           => 'select',
-              'title'          => 'Select',
-              'options'        => array(
-                  'bmw'          => 'BMW',
-                  'mercedes'     => 'Mercedes',
-                  'volkswagen'   => 'Volkswagen',
-                  'other'        => 'Other',
-              ),
-              'default_option' => 'Select your favorite car',
-            ),
-
-            array(
-              'id'      => 'number_1',
-              'type'    => 'number',
-              'title'   => 'Number',
-              'default' => '10',
-              'after'   => ' <i class="cs-text-muted">$ (dollars)</i>',
-            ),
-
-            array(
-              'type'    => 'notice',
-              'class'   => 'info',
-              'content' => 'This is info notice field for your highlight sentence.',
-            ),
-
-            array(
-              'type'    => 'notice',
-              'class'   => 'warning',
-              'content' => 'This is info warning field for your highlight sentence.',
-            ),
-
-            array(
-              'id'      => 'text_2',
-              'type'    => 'text',
-              'title'   => 'Text',
-              'desc'    => 'Some description here for this option field.',
+              'default'         =>'alipay',
             ),
 
   ), // end: fields
 );
-
+$options[]      = array(
+  'name'        => 'jifen',
+  'title'       => '积分',
+  'icon'        => 'fa fa-star',
+  // begin: fields
+  'fields'      => array(
+            array(
+              'id'      => 'open_jifen',
+              'type'    => 'switcher',
+              'title'   => '开启积分系统',
+            ),
+            array(
+              'id'      => 'wx_appid',
+              'type'    => 'number',
+              'title'   => '每次签到送积分',
+            ),
+  ), // end: fields
+);
 // ------------------------------
 // backup                       -
 // ------------------------------
@@ -226,7 +226,7 @@ $options[]   = array(
     array(
       'type'    => 'notice',
       'class'   => 'warning',
-      'content' => 'You can save your current options. Download a Backup and Import.',
+      'content' => '你可以保存当前的配置选项，下载备份或导入',
     ),
 
     array(

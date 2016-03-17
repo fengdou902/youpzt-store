@@ -358,10 +358,10 @@ class CSFramework extends CSFramework_Abstract {
       settings_fields( $this->unique. '_group' );
 
       echo '<header class="cs-header">';
-      echo '<h1>优品商城选项 <small>by YOUPZT</small></h1>';
+      echo '<h1>优品微商城选项 <small>by YOUPZT</small></h1>';
       echo '<fieldset>';
       echo ( $this->settings['ajax_save'] === true ) ? '<span id="cs-save-ajax">'. __( '设置已保存', 'cs-framework' ) .'</span>' : '';
-      submit_button( __( '保存', 'cs-framework' ), 'primary', 'save', false, array( 'data-ajax' => $this->settings['ajax_save'], 'data-save' => __( 'Saving...', 'cs-framework' ) ) );
+      submit_button( __( '保存', 'cs-framework' ), 'primary', 'save', false, array( 'data-ajax' => $this->settings['ajax_save'], 'data-save' => __( '正在保存...', 'cs-framework' ) ) );
       submit_button( __( '恢复默认', 'cs-framework' ), 'secondary cs-restore cs-reset-confirm', $this->unique .'[reset]', false );
       echo '</fieldset>';
       echo ( empty( $has_nav ) ) ? '<a href="#" class="cs-expand-all"><i class="fa fa-eye-slash"></i> '. __( '显示所有选项', 'cs-framework' ) .'</a>' : '';

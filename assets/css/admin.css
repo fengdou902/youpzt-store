@@ -21,3 +21,5 @@ youpzt
 .cs-framework .cs-nav ul li a,.cs-framework .cs-nav .cs-seperator,.cs-framework .cs-nav ul ul li a,.cs-framework .cs-nav ul ul{border-color: #e6e6e6;}
 .cs-framework .cs-nav ul li a,.cs-framework .cs-nav ul li .cs-section-active,.cs-framework .cs-nav .cs-seperator{color: #444;}
 .cs-framework .cs-nav ul li a:hover,.cs-framework .cs-nav ul li .cs-section-active{color: #000;background-color: #fff;}
+/*配置框架*/
+.cs-field-notice .cs-notice{font-size: 14px;}
